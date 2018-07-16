@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Seq2seq-pytorch.iml" filepath="$PROJECT_DIR$/.idea/Seq2seq-pytorch.iml" />
+      <module fileurl="file://E://Seq2seq-pytorch/../../Seq2seq-tf/.idea/Seq2seq-pytorch.iml" filepath="E://Seq2seq-pytorch/../../Seq2seq-tf/.idea/Seq2seq-pytorch.iml" />
+    </modules>
+  </component>
+</project>
