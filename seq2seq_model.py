@@ -1,6 +1,8 @@
 from __future__ import unicode_literals, print_function, division
 from io import open
 import re
+import sys
+import getopt
 import random
 from nltk.translate.bleu_score import sentence_bleu
 import torch
@@ -762,35 +764,45 @@ def calculate_BLEU(encoder1, attn_decoder1, n_examples):
 
 #evaluateAndShowAttention("elle a cinq ans de moins que moi .")
 if __name__ == '__main__':
+
+    try:
+        opts, args = getopt.getopt(sys.argv[1:], "ui:", ["usage=", "iters="])
+    except getopt.GetoptError:
+        sys.exit()
+    iters = 150000
+    for opt, arg in opts:
+        if opt == "--usage":
+            usage = arg
+        if opt == "--iters":
+            iters = arg
     # to train a chatbot
-    '''perplexity, _, _ = run_train(iterations=50000) #75000
-    print('Perplexity: ', plerplexity)'''
+    if usage == 'train':
+        perplexity, _, _ = run_train(iterations=iters) #75000
+        print('Perplexity: ', perplexity)
 
-    # calculate BLEU and perplexity
-    perplexity, encoder1, attn_decoder1 = run_train(iterations=15000) # 500 samples perplexity: 4.58290114593
-    print('Perplexity of the whole training process: ', perplexity)
-    BLEU = calculate_BLEU(encoder1, attn_decoder1, 5000) # 5000 samples BLEU score: 0.3024%
-    print('BLEU score of the whole model: {:.4%}'.format(BLEU))
+    elif usage == 'evaluate':
+        # calculate BLEU and perplexity
+        perplexity, encoder1, attn_decoder1 = run_train(iterations=iters) # 500 samples perplexity: 4.58290114593
+        print('Perplexity of the whole training process: ', perplexity)
+        BLEU = calculate_BLEU(encoder1, attn_decoder1, 5000) # 5000 samples BLEU score: 0.3024%
+        print('BLEU score of the whole model: {:.4%}'.format(BLEU))
 
-    # to test a chatbot
-    '''
-    encoder1 = torch.load('model/1-layer/encoder.pkl')
-    attn_decoder1 = torch.load('model/1-layer/decoder.pkl')
-    input_sentence = ''
-    while input_sentence != 'exit':
-        input_sentence = normalizeString(input('User input: '))  
-        output_sentence = evaluateAndReturnResponse(input_sentence, encoder1, attn_decoder1)
-        print('Agent: ', output_sentence)'''
+    elif usage == 'test':
+        # to test a chatbot
+        encoder1 = torch.load('model/1-layer/encoder.pkl')
+        attn_decoder1 = torch.load('model/1-layer/decoder.pkl')
+        input_sentence = ''
+        while input_sentence != 'exit':
+            input_sentence = normalizeString(input('User input: '))
+            output_sentence = evaluateAndReturnResponse(input_sentence, encoder1, attn_decoder1)
+            print('Agent: ', output_sentence)
 
 
-## for 1 layer encoder and decoder (hidden_size = 256)
+## for 1 layer encoder and decoder with OpenSubtitle Dataset (hidden_size = 256)
 # 500 samples perplexity: 4.58290114593
 # 5000 samples BLEU score: 0.3024%
 
-## for 4 layer encoder and decoder (hidden_size = 256)
-# 50000 samples perplexity: 8.28183198726
-# 5000 samples BLEU score: 5000 samples BLEU score:
 
-## for 4 layer encoder and decoder (hidden_size = 1000)
-# 50000 samples perplexity: 7.58610500192
-# 5000 samples BLEU score: 5000 samples BLEU score: 0.1755%
+## for 1 layer encoder and decoder with Twitter Triplet Dataset (hidden_size = 512)
+# Perplexity of the whole training process:  2.65806118166
+# BLEU score of the whole model: 2.1589%
