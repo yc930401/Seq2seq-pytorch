@@ -14,8 +14,8 @@
       <file leaf-file-name="seq2seq_model.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/seq2seq_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4585">
-              <caret line="774" column="23" lean-forward="true" selection-start-line="774" selection-start-column="23" selection-end-line="774" selection-end-column="23" />
+            <state relative-caret-position="1560">
+              <caret line="773" column="28" lean-forward="true" selection-start-line="773" selection-start-column="28" selection-end-line="773" selection-end-column="28" />
               <folding>
                 <element signature="e#0#65#0" expanded="true" />
               </folding>
@@ -398,19 +398,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/seq2seq_model.py</url>
-          <line>764</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/prepare_OpenSubtitles.py</url>
           <line>10</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/seq2seq_model.py</url>
-          <line>768</line>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="4" />
@@ -556,8 +546,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/seq2seq_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4585">
-          <caret line="774" column="23" lean-forward="true" selection-start-line="774" selection-start-column="23" selection-end-line="774" selection-end-column="23" />
+        <state relative-caret-position="1560">
+          <caret line="773" column="28" lean-forward="true" selection-start-line="773" selection-start-column="28" selection-end-line="773" selection-end-column="28" />
           <folding>
             <element signature="e#0#65#0" expanded="true" />
           </folding>
