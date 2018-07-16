@@ -22,21 +22,21 @@ I followed the Pytorch Seq2seq tutorial and made some modifications based on the
 5. Use the model to converse with people
 
 ## Result
-- > lool i broke three of my mums so i ve been banned from doing it lol
-- = antonyy i ve totally broke it hahah hard times
-- < antonyy i ve totally broke it hahah hard times
+1. lool i broke three of my mums so i ve been banned from doing it lol
+Truth: antonyy i ve totally broke it hahah hard times
+Generated: antonyy i ve totally broke it hahah hard times
 
-- > cus i told her your very protective of me
-- = breon lol why i m not mean
-- < breon lol why i m not mean
+2. cus i told her your very protective of me
+Truth: breon lol why i m not mean
+Generated: breon lol why i m not mean
 
-- > itslauren remember that one day you forced him to eat golden grahms yea that day
-- = kid uhmmm when did he tell you this
-- < kid did when you did he have to get this morning
+3. itslauren remember that one day you forced him to eat golden grahms yea that day
+Truth: kid uhmmm when did he tell you this
+Generated: kid did when you did he have to get this morning
 
-- > not to sure just fill the form in anyways don t think we need t pay today
-- = forms have to be given to paul today
-- < forms have to be given to paul today
+4. not to sure just fill the form in anyways don t think we need t pay today
+Truth: forms have to be given to paul today
+Generated: forms have to be given to paul today
 
 ## References:
 https://pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html </br>
